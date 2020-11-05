@@ -98,7 +98,7 @@ promise
   .finally(() => console.log('finished!')); // "finished"*/
 
   //Цепочки промисов
-const promise = new Promise((resolve, reject) => {
+/*const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve(5);
   }, 2000);
@@ -119,3 +119,65 @@ promise
   .catch(error => {
     console.log(error);
   });
+
+  //Promise.all()
+  const makePromise = (text, delay) => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(text), delay);
+  });
+};
+
+const promiseA = makePromise('promiseA', 1000);
+const promiseB = makePromise('promiseB', 3000);
+
+/*
+ * Выполнится спустя 3 секунды, когда выполнится второй промис с задержкой в 3c.
+ * Первый выполнится через секунду и просто будет готов
+ */
+/*Promise.all([promiseA, promiseB])
+  .then(result => console.log(result)) //["promiseA", "promiseB"]
+  .catch(err => console.log(err));
+*/
+
+  //Promise.race()
+  /*const makePromise = (text, delay) => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(text), delay);
+  });
+};
+
+const promiseA = makePromise('promiseA', 1000);
+const promiseB = makePromise('promiseB', 3000);
+
+/*
+ * Выполнится спустя 1 секунду, когда выполнится самый быстрый promiseA
+ * с задержкой в 1c. Второй промис promiseB будет проигнорирован
+ */
+/*Promise.race([promiseA, promiseB])
+  .then(result => console.log(result)) // "promiseA"
+  .catch(err => console.log(err));
+
+
+  //Promise.resolve()
+  const getMessage = function(callback) {
+  const input = prompt('Введите сообщение');
+
+  callback(input);
+};
+
+const logger = message => console.log(message);
+
+getMessage(logger);*/
+//превращается
+const getMessage = function() {
+  const input = prompt('Введите сообщение');
+
+  return Promise.resolve(input);
+};
+
+const logger = message => console.log(message);
+
+getMessage().then(message => logger(message));
+
+// Или еще короче
+getMessage().then(logger);

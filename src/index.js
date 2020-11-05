@@ -1,21 +1,8 @@
 //import './styles.css';
-import './theory.js';
+//import './theory.js';
+import './burger.js';
+//import './task-1.js';
+//import './task-2.js';
+//import './task-3.js';
 
-/*
-const delay = ms => {
-  // Твой код
-};
-/*const promise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve('success!');
-  }, 2000);
-});
- */
-/*const logger = time => console.log(`Resolved after ${time}ms`);
-
-// Вызовы функции для проверки
-delay(2000).then(logger); // Resolved after 2000ms
-delay(1000).then(logger); // Resolved after 1000ms
-delay(1500).then(logger); // Resolved after 1500ms
-*/
 
