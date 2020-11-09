@@ -17,12 +17,10 @@ const toggleUserState = (allUsers, userName) => {
       }
 
       reject(' Error ');
-    }, 1000);
+    }, 500);
   });   
 };
 const logger = updatedUsers => console.table(updatedUsers);
-
-//console.table(logger);
 
 function onToggleUserStateSuccess(result) {
   console.log("onToggleUserStateSuccess");
